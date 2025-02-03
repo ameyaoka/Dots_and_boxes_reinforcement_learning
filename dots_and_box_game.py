@@ -1,5 +1,6 @@
 # dash - dot game # goal is to train a neural network and train using reinforcement learning
 
+ display board
 def display_board(horizontal_lines, vertical_lines, boxes):
     print('  ' + ' '.join(f"{i}" for i in range(4)))
     
@@ -94,8 +95,8 @@ def main():
         
         while True:
             try:
-                start_r, start_c = map(int, input("Enter start dot (row col 0-3): ").split())
-                end_r, end_c = map(int, input("Enter end dot (row col 0-3): ").split())
+                start_r, start_c = map(int, input("Enter start dot (row col 0-3): ").split(','))
+                end_r, end_c = map(int, input("Enter end dot (row col 0-3): ").split(','))
             except ValueError:
                 print("Invalid input. Please enter two integers separated by space.")
                 continue
@@ -147,3 +148,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
